@@ -1,7 +1,9 @@
-#![feature(process)]
+#![feature(core)]
 #![feature(collections)]
 
-use std::str::StrExt;
+extern crate core;
+
+use core::str::StrExt;
 use std::string::FromUtf8Error;
 use std::process::{Command, ExitStatus};
 
