@@ -1,5 +1,6 @@
 #![feature(core)]
 #![feature(collections)]
+#![cfg_attr(test, feature(path_ext))]
 
 extern crate core;
 
@@ -65,4 +66,14 @@ pub fn fetch() {
         .arg("rust")
         .arg("--strip-components=1");
     run(&mut untar_rust);
+}
+
+#[test]
+fn test_fetch() {
+    use std::path::Path;
+    use std::fs::PathExt;
+
+    fetch();
+
+    assert!(Path::new("rust").is_dir())
 }
