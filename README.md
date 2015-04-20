@@ -1,9 +1,9 @@
 # rust-src
-==========
+[![Build Status](https://travis-ci.org/sondrele/rust-src.svg)](https://travis-ci.org/sondrele/rust-src)
 
 A build-dependency to download a tarball of the Rust source code
-associated with the current version of `rustc`. 
-Makes it easier to compile many of Rust's different crates and add them 
+associated with the current version of `rustc`.
+Makes it easier to compile many of Rust's different crates and add them
 as dependencies to a project where the target triple is not natively supported by `rustc`.
 
 Add as a build-dependency in `Cargo.toml`
