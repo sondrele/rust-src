@@ -1,10 +1,5 @@
-#![feature(core)]
-#![feature(collections)]
 #![cfg_attr(test, feature(path_ext))]
 
-extern crate core;
-
-use core::str::StrExt;
 use std::string::FromUtf8Error;
 use std::process::{Command, ExitStatus};
 
@@ -51,7 +46,7 @@ pub fn fetch() {
     mkdir_rust.arg("-p").arg("rust");
     run(&mut mkdir_rust);
 
-    let url = String::from_str("https://github.com/rust-lang/rust/tarball/") + &hash[..];
+    let url = "https://github.com/rust-lang/rust/tarball/".to_string() + &hash[..];
     let mut download_rust = Command::new("wget");
     download_rust.arg("-q")
         .arg("-O")
